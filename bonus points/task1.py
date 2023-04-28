@@ -4,8 +4,8 @@ import psycopg2
 conn = psycopg2.connect(
     host="localhost",
     database="mydb",
-    user="myuser",
-    password="mypassword"
+    user="Sengo",
+    password="qwerty"
 )
 
 # Create a cursor

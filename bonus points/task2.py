@@ -7,7 +7,7 @@ conn = psycopg2.connect(
     host="localhost",
     database="mydb",
     user="myuser",
-    password="mypassword"
+    password="qwerty"
 )
 
 # Create a cursor
