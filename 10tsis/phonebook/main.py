@@ -2,7 +2,7 @@ import psycopg2
 conn = psycopg2.connect(
     database="phonebook",
     user="postgres",
-    password="Mazayka2003",
+    password="qwerty",
     host="localhost")
 sql = 'select name, number from phonebookk'
 cursor = conn.cursor()

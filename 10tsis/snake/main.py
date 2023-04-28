@@ -6,7 +6,7 @@ import time
 conn = psycopg2.connect(
   database="postgres",
   user="postgres",
-  password="Mazayka2003",
+  password="qwerty",
   host="localhost")
 
 
@@ -20,7 +20,6 @@ if len(players2) == 0:
   	print('please register in the system')
 else:
 	print(f'Your Score: {players2[0][1]}, Your level: {players2[0][2]}')
-
 
 
 pygame.init()
@@ -61,9 +60,10 @@ def Score(score, level, weight):
     score_surface = basicfont.render('Your Score : ' + str(score), True, white)
     score_surface2 = basicfont.render('Your Level : ' + str(level), True, white)
     score_surface3 = basicfont.render('Weight : ' + str(weight), True, white)
-    screen.blit(score_surface, (0,0))
-    screen.blit(score_surface2, (200,0))
-    screen.blit(score_surface3, (400,0))
+    screen.blit(score_surface, (20,20))
+    screen.blit(score_surface2, (220,20))
+    screen.blit(score_surface3, (420,20))
+    pygame.draw.rect(screen, BLUE, (0, 0, w, h), 8)
 score = 0
 basicFontForText = pygame.font.SysFont(None, 30)
 cnt=0
@@ -96,6 +96,7 @@ while not finished:
 				direct = 'LEFT'
 			if event.key == pygame.K_RIGHT:
 				direct = 'RIGHT'
+	
 
 	if direct == 'UP' and startdir != 'DOWN':
 		startdir = 'UP'
@@ -147,9 +148,8 @@ while not finished:
 		snake_speed+=3
 		lll+=1
 		cnt=0
-	Score(score, lll, kk)
 
-	
+	Score(score, lll, kk)
 	cursor = conn.cursor()
 	
 	cursor.execute(f'''
